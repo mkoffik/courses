@@ -21,5 +21,5 @@ public class Article {
     private String code;
     private String article;
     private int quantite;
-    private Double prixUnitaire;
+    private Double prix;
 }
