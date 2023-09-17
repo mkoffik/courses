@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ArticleServiceI {
 
+    List<Article> addNewArticle(Article article) throws Exception;
     List<Article> findAllArticles();
     List<Article> findArticleByCode(String code);
 

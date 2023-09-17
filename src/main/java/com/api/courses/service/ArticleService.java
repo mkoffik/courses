@@ -14,6 +14,15 @@ public class ArticleService implements ArticleServiceI {
     private ArticleRepository articleRepository;
 
     @Override
+    public List<Article> addNewArticle(Article article) throws Exception {
+        if(articleRepository.findAll().stream().filter(a -> a.getCode().equals(article.getCode())).findFirst().isEmpty()){
+            throw new Exception(" cet atricle : "+ article.toString() + " existe deja ");
+        }
+        articleRepository.save(article);
+        return articleRepository.findAll();
+    }
+
+    @Override
     public List<Article> findAllArticles() {
         return articleRepository.findAll();
     }
@@ -32,4 +41,5 @@ public class ArticleService implements ArticleServiceI {
     public List<Article> findArticleByPrixUnitaire(Double pu) {
         return articleRepository.findArticleByPrixUnitaire(pu);
     }
+
 }
