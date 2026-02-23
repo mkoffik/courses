@@ -2,10 +2,12 @@ package com.api.courses.service;
 
 import com.api.courses.model.Client;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public interface ClientServiceI {
 
     List<Client> findAllClients();

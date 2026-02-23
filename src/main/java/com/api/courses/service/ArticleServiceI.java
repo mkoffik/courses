@@ -2,9 +2,11 @@ package com.api.courses.service;
 
 import com.api.courses.model.Article;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface ArticleServiceI {
 
     List<Article> addNewArticle(Article article) throws Exception;
