@@ -1,13 +1,11 @@
 package com.api.courses.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
-@Entity(name = "article")
+@Entity
+@Table(name = "article")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

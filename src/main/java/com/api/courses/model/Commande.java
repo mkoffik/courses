@@ -1,18 +1,22 @@
 package com.api.courses.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "Commande")
+@Getter
+@Setter
 @Builder
 public class Commande {
-    private String IdCommande;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int IdCommande;
     private String IdClient;
     private List<Article> article;
     private String commentaire;

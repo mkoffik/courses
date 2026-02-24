@@ -1,23 +1,23 @@
 package com.api.courses.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
 
 import java.util.List;
 
 @Data
+@Entity
+@Table(name = "Facture")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Builder
 public class Facture {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String idFacture;
+    private int idFacture;
     private String idClient;
     private List<Commande> commande;
     private String commentaire;
